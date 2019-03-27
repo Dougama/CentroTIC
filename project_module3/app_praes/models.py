@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Departamento(models.Model):
@@ -17,7 +16,7 @@ class Ciudad(models.Model):
         
 class Colegio(models.Model):
     nombre_colegio = models.CharField(max_length=100)
-    telefono = models.IntegerField()
+    telefono = models.CharField(max_length=50, unique=True)
     nombre_rector = models.CharField(max_length=50)
     correo_rector = models.EmailField(max_length=254)
     direccion_colegio = models.CharField(max_length=50)
