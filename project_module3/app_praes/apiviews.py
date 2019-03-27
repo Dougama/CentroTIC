@@ -23,10 +23,12 @@ class LoginView(APIView):
             return Response({"error": "Wrong Credentials"}, status=status.HTTP_400_BAD_REQUEST)
 
 class CrearUsuarioAPI(generics.CreateAPIView):
-    # authentication_classes = ()
-    # permission_classes = ()
+    authentication_classes = ()
+    permission_classes = ()
     serializer_class = UserSerializer
 
 class TemperaturaAPI(generics.ListCreateAPIView):
+    #authentication_classes = ()
+    #permission_classes = ()
     queryset = Temperatura.objects.all()
     serializer_class = TemperaturaSerializer
