@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from app_sensado import views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('app_sensado/', include('app_sensado.urls', namespace='app_sensado')),
     path('app_praes/', include('app_praes.urls', namespace="app_praes")),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
 ]

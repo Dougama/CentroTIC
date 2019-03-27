@@ -1,5 +1,7 @@
 
-from .models import Temperatura, Humedad, PresionAtmosferica, MaterialParticulado, NO2, Polvo, O3, SO2, CO, CO2, MetanoPropanoCO, LuzUV, MaterialOrganico, CH4, Anemometro
+from .models import Temperatura, Humedad, PresionAtmosferica, \
+                    MaterialParticulado, NO2, Polvo, O3, SO2, CO, CO2, \
+                    MetanoPropanoCO, LuzUV, MaterialOrganico, CH4, Anemometro
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token

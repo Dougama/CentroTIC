@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app_praes',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
 ]
 
 REST_FRAMEWORK = {
