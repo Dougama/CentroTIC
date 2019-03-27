@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h2>Presentacion de datos historicos </h2>
+        <img src="{% static 'bw-dataset.png' %}" class="img-fluid" alt="Responsive image" height=100px width=200px>
+        <ul>
+            <li>Temperatura</li>
+            <li>Humedad relativa</li>
+            <li>Alcohol</li>
+            <li>Amoniaco</li>
+            <li>Aire</li>
+        </ul>
+    </div>
+
+
+<!-- b) graficas -->
+    <div class="row">
+        <div class="col">
+                <div id="grafica_temperatura" style="min-width: 300px; height: 250px; margin: 0 auto"></div>
+        </div>
+        <div class="col">
+                <div id="grafica_humedad" style="min-width: 300px; height: 250px; margin: 0 auto"></div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col">
+                    <div id="grafica_amoniaco" style="min-width: 300px; height: 250px; margin: 0 auto"></div>
+            </div>
+            <div class="col">
+                    <div id="grafica_alcohol" style="min-width: 300px; height: 250px; margin: 0 auto"></div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col">
+            <div id="grafica_CO" style="min-width: 300px; height: 250px; margin: 0 auto"></div>
+    </div>
+    </div>
+
+</div>
+<script src= "{% static 'js/historico_datos.js' %}" ></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+{% endblock  %}

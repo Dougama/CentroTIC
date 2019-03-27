@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_block %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>Demo IoT</h1>
+        <div class="col">
+            <img src="{% static 'IoTdemo.png' %}" class="img-fluid" alt="Responsive image" height=300px width=500px>
+        </div>
+    </div>
+   <p>En el enlace de github puede descargar este proyecto junto con la programación de todas las actividades del diplomado en IoT</p>
+   <div class="alert alert-primary" role="alert">
+   <a href="https://github.com/LuisDiazM/Demo_IoT" class="alert-link">Enlace Github del proyecto</a>
+  </div> 
+   <div class="row">
+        <div class="col">
+            <h2>Modulo I</h2>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSQdDFY1ghiOVRaBZeXHefPBifhlZFrXzf_6qktCEnVDMhV_--zlhkhaiGxoKlmQKdEMwfWf4eSBVEO/embed?start=false&loop=false&delayms=3000" frameborder="0" width="500" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+        <div class="col">
+            <h2>Modulo II</h2>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS9BzWqVHKKTIzb3Ri2dPVaU-OAOyDaWn_iIJzTye4E1e0I1mb1KV0MwYiimZHE-nxHCk1eTE2iDZ6m/embed?start=false&loop=false&delayms=3000" frameborder="0" width="500" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+        <div class="col">
+            <h2>Modulo III</h2>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR5K8BHyYsPcZ3QxSoDHUZIbrxdcAZVztzwYeTp9o8EpaVT3pFyf7JwAsgP_Nm20621q8FG0W6cmx-4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="500" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock  %}

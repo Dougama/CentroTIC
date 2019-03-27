@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Demo IoT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+   <ul class="nav ">
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'index' %}">Principal</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'app_sensado:accion-raspberry' %}">Encender LED</a>
+  </li>
+  <li class="nav-item"> <a class="nav-link" href="{% url 'app_sensado:datos-fecha' %}">Ultimos datos </a>
+</li>
+  <li class="nav-item"> <a class="nav-link" href="{% url 'app_sensado:historico-datos' %}">Histórico datos</a>
+</li>
+  <li>Django Rest-Framework
+      <a class="nav-link" href="{% url 'app_sensado:lista-sensores-generics' %}">Lista sensores</a>
+      <a class="nav-link" href="{% url 'app_sensado:lista-tarjetas-generics' %}">Lista tarjetas</a>
+  </li>
+</li>
+</ul>
+</div>
+
+
+    {% block body_block %}
+    
+    {% endblock  %}
+</body>
+</html>
