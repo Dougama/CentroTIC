@@ -9,7 +9,10 @@ from django.http import JsonResponse
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html", {})
+    return render(request, "app_sensado/index.html", {})
+
+def main_index(request):
+    return render(request, "main_index.html", {})
 
 def accion_raspberry(request):
     import paho.mqtt.publish as publish

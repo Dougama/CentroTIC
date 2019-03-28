@@ -15,4 +15,5 @@ urlpatterns = [
     path('lista-gases/', apiviews.ListaGases.as_view()),
     path('historico-datos/', views.historico_datos, name="historico-datos"),
     path('historico-datos-json/', views.historico_datos_json, name="historico-datos-json"),
+    path('index/', views.index, name="index"),
 ]
