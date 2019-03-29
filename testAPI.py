@@ -18,6 +18,6 @@ print("token del usuario luismiguel {}" .format(r.text))
 
 # para guardar un dato por usuario se requiere un token, por ejemplo: para el usuario: luismiguel
 # se obtuvo el siguiente Token 1b6c7a70e04dc71259197a359ba947bc8cc41271
-r = requests.post("http://127.0.0.1:8000/app_praes/temperatura/", data=pyload, headers={"Authorization": " Token 1b6c7a70e04dc71259197a359ba947bc8cc41271"})
+r = requests.post("http://127.0.0.1:8000/app_praes/temperatura/", data=pyload, headers={"Authorization": " Token 0da7795909a18584059f0a7714ade7f82ca3256f"})
 
 

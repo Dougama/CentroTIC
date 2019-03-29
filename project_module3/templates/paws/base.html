@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CENTROTIC</title>
+    <title>Demo IoT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -13,21 +13,19 @@
 <body>
 
 <div class="container">
-<div class="jumbotron">
-    <img src= "{% static 'centrotic.png' %}" alt="Imagen no encontrada" width=150px height=100px>
-    <h3> Proyectos </h3>
-</div>
-<ul class="nav ">
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'app_sensado:index' %}">Diplomado IoT</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">KIT PRAES</a>
-    </li>
-    <li class="nav-item"> <a class="nav-link" href="#">Proyecto PAWS</a>
+   <ul class="nav ">
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'main-index' %}"> <img src= "{% static 'centrotic.png' %}" alt="Imagen no encontrada" width=100px height=70px> </a>
   </li>
-  <li class="nav-item"> <a class="nav-link" href="http://centrotic2uis.cloudapp.net:8080/sigripv/"> Sistemas GRIPV</a> </li>
-  </ul>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'app_sensado:accion-raspberry' %}">Encender LED</a>
+  </li>
+  <li class="nav-item"> <a class="nav-link" href="{% url 'app_sensado:datos-fecha' %}">Ultimos datos </a>
+</li>
+  <li class="nav-item"> <a class="nav-link" href="{% url 'app_sensado:historico-datos' %}">Histórico datos</a>
+</li>
+</li>
+</ul>
 </div>
 
 

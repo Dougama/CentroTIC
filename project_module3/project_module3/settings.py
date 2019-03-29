@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_sensado',
     'app_praes',
+    'paws',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
