@@ -7,7 +7,8 @@
     <title>CENTROTIC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+
 
 </head>
 <body>
@@ -24,9 +25,11 @@
     <li class="nav-item">
       <a class="nav-link" href="#">KIT PRAES</a>
     </li>
-    <li class="nav-item"> <a class="nav-link" href="#">Proyecto PAWS</a>
+    <li class="nav-item"> <a class="nav-link" href="{% url 'paws:index-paws' %}">Proyecto PAWS</a>
   </li>
   <li class="nav-item"> <a class="nav-link" href="http://centrotic2uis.cloudapp.net:8080/sigripv/"> Sistemas GRIPV</a> </li>
+   <li class="nav-item"> <a class="nav-link" href="{% url 'nariz_electronica:index-nariz' %}">Nariz Electronica</a> </li>
+  </ul>
   </ul>
 </div>
 

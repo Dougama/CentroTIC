@@ -3,5 +3,5 @@ from . import views
 
 app_name = "paws"
 urlpatterns = [
-    # path("index", views.accion_raspberry, name="accion-raspberry"),
+    path("index", views.index, name="index-paws"),
 ]

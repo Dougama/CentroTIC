@@ -22,5 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('app_sensado/', include('app_sensado.urls', namespace='app_sensado')),
     path('app_praes/', include('app_praes.urls', namespace="app_praes")),
+    path('paws/', include('paws.urls', namespace="paws")),
+    path('nariz_electronica/', include('nariz_electronica.urls', namespace="nariz_electronica")),
     path('', views.main_index, name='main-index'),
 ]
