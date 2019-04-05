@@ -1,0 +1,16 @@
+{% extends "main_base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+<div class="container">
+<h2>Ingresar</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Ingresar</button>
+</form>
+<p><a href="{% url 'password_reset' %}">¿Ha Olvidado su contraseña?</a></p>
+</div>
+
+{% endblock  %}

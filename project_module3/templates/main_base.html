@@ -15,8 +15,8 @@
 
 <div class="container">
 <div class="jumbotron">
-    <img src= "{% static 'centrotic.png' %}" alt="Imagen no encontrada" width=150px height=100px>
-    <h3> Proyectos </h3>
+<h3> Proyectos </h3>
+ <a class="nav-link active" href="{% url 'main-index' %}"> <img src= "{% static 'centrotic.png' %}" alt="Imagen no encontrada" width=150px height=120px> </a>    
 </div>
 <ul class="nav ">
     <li class="nav-item">
@@ -29,9 +29,18 @@
   </li>
   <li class="nav-item"> <a class="nav-link" href="http://centrotic2uis.cloudapp.net:8080/sigripv/"> Sistemas GRIPV</a> </li>
    <li class="nav-item"> <a class="nav-link" href="{% url 'nariz_electronica:index-nariz' %}">Nariz Electronica</a> </li>
+  
+   {% if user.is_authenticated %}
+    <li class="nav-item"> <a class="nav-link" href="{% url 'logout' %}">SALIR</a> </li>
+    {% else %}
+    <li class="nav-item"> <a class="nav-link" href="{% url 'login' %}"> INGRESAR</a></li>
+    
+    {% endif %}
   </ul>
   </ul>
 </div>
+
+
 
 
     {% block body_block %}

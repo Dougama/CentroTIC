@@ -20,7 +20,15 @@
     <li class="nav-item">
     <a class="nav-link active" href="#">PRAES</a>
   </li>
-
+      <li class="nav-item">
+    <a class="nav-link active" href="{% url 'app_praes:medicion-actual'%}">Variables ambientales</a>
+  </li>
+ {% if user.is_authenticated %}
+    <li class="nav-item"> <a class="nav-link" href="{% url 'logout' %}">SALIR</a> </li>
+    {% else %}
+    <li class="nav-item"> <a class="nav-link" href="{% url 'login' %}"> INGRESAR</a></li>
+    
+    {% endif %}
  </ul>
 </div>
 

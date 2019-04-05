@@ -23,6 +23,12 @@
       <li class="nav-item">
     <a class="nav-link active" href="#">Canales libres por regiones</a>
   </li>
+   {% if user.is_authenticated %}
+    <li class="nav-item"> <a class="nav-link" href="{% url 'logout' %}">SALIR</a> </li>
+    {% else %}
+    <li class="nav-item"> <a class="nav-link" href="{% url 'login' %}"> INGRESAR</a></li>
+    
+    {% endif %}
  </ul>
 </div>
 

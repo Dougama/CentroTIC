@@ -6,7 +6,7 @@ from .apiviews import TemperaturaAPI, HumedadAPI, PresionAtmosfericaAPI, Materia
                       CrearUsuarioAPI, LoginView
 
 from rest_framework_swagger.views import get_swagger_view
-from .views import index
+from .views import index, medicion_actual
 
 app_name = "app_praes"
 schema_view = get_swagger_view(title='Temperatura API')
@@ -30,5 +30,6 @@ urlpatterns = [
     path('material-organico/', MaterialOrganicoAPI.as_view(), name="praes-material-organico"),
     path('ch4/', CH4API.as_view(), name="praes-ch4"),
     path('anemometro/', AnemometroAPI.as_view(), name="praes-anemometro"),
-    path('index/', index, name="index-praes")
+    path('index/', index, name="index-praes"),
+    path('medicion_actual/', medicion_actual, name="medicion-actual")
 ]
