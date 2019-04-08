@@ -3,18 +3,18 @@ from rest_framework.authtoken import views
 from .apiviews import TemperaturaAPI, HumedadAPI, PresionAtmosfericaAPI, MaterialParticuladoAPI, \
                       NO2API, PolvoAPI, O3API, SO2API, COAPI, CO2API, MetanoPropanoCOAPI, \
                       LuzUVAPI, MaterialOrganicoAPI, CH4API, AnemometroAPI, \
-                      CrearUsuarioAPI, LoginView
+                      CrearUsuarioAPI, LoginView, SensoresAPI
 
 from rest_framework_swagger.views import get_swagger_view
 from .views import index, medicion_actual, monitoreo_lecturas, control_ESP32
 
 app_name = "app_praes"
-schema_view = get_swagger_view(title='Temperatura API')
+schema_view = get_swagger_view(title='Estructura API')
 
 urlpatterns = [
-    path('login/', views.obtain_auth_token, name="login"),
+    path('login/', LoginView.as_view(), name="login"),
     path('usuario/', CrearUsuarioAPI.as_view(), name="crear-usuario"),
-    path('docs/', schema_view),
+    path('docs/', schema_view, name="documentacion"),
     path('temperatura/', TemperaturaAPI.as_view(), name="praes-temperatura"),
     path('humedad/', HumedadAPI.as_view(), name="praes-humedad"),
     path('presion-atmosferica/', PresionAtmosfericaAPI.as_view(), name="praes-presion-atmosferica"),
@@ -34,4 +34,5 @@ urlpatterns = [
     path('medicion_actual/', medicion_actual, name="medicion-actual"),
     path('monitoreo_lecturas/', monitoreo_lecturas, name="monitoreo-lecturas"),
     path('control_kit/', control_ESP32, name="control-kit"),
+    path('sensores/', SensoresAPI.as_view(), name="sensores-API"),
 ]

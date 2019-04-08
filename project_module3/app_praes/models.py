@@ -24,7 +24,7 @@ class Colegio(models.Model):
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre_colegio, self.direccion_colegio
+        return self.nombre_colegio
 
 class Kit(models.Model):
     nombre_kit = models.CharField(max_length=50)
@@ -33,7 +33,7 @@ class Kit(models.Model):
     ubicacion_kit = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.nombre_kit, self.ubicacion_kit
+        return self.nombre_kit
 
 class Sensores(models.Model):
     nombre_sensor = models.CharField(max_length=50)
@@ -123,6 +123,9 @@ class Semillero(models.Model):
     telefono = models.IntegerField()
     kit = models.ForeignKey(Kit, on_delete=models.CASCADE)
     colegio = models.ForeignKey(Colegio, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.responsable
 
 class Integrantes(models.Model):
 

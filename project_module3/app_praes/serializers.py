@@ -1,7 +1,7 @@
 
 from .models import Temperatura, Humedad, PresionAtmosferica, \
                     MaterialParticulado, NO2, Polvo, O3, SO2, CO, CO2, \
-                    MetanoPropanoCO, LuzUV, MaterialOrganico, CH4, Anemometro
+                    MetanoPropanoCO, LuzUV, MaterialOrganico, CH4, Anemometro, Sensores
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
@@ -98,3 +98,11 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         Token.objects.create(user=user)
         return user
+
+class SensoresSerializer(serializers.ModelSerializer):
+    """
+    Lista de sensores que se encuentran en la API para monitorear el ambiente
+    """
+    class Meta:
+        model = Sensores
+        fields ="__all__"

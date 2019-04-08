@@ -46,5 +46,47 @@
     {% block body_block %}
     
     {% endblock  %}
+  <br>  <br>   <br>
+  <br>
+
+
+   <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 footerleft ">
+            <h4> <b>Proyectos de Investigación asociados al grupo de investigación Radiogis</b></h4>
+            <p><i class="fa fa-map-pin"></i> Bucaramanga, Santander, Colombia</p>
+            <p><i class="fa fa-phone"></i> PBX : (57) (7) 6344000 ext. 2373</p>
+            <p><i class="fa fa-envelope"></i> E-mail : luismiguel@radiogis.uis.edu.co</p>
+               {% if user.is_authenticated %}
+               <h4> Solo Usuario Administrador </h4>
+               <ul>
+                 <li><a href="{% url 'app_praes:sensores-API' %}">Sensores API</a></li>
+                 <li>                <a href="{% url 'app_praes:login' %}">Usuarios API</a>                 </li>
+                 <li>                <a href="{% url 'app_praes:crear-usuario' %}">Crear Usuario</a>        </li>
+                 <li>                <a href="{% url 'app_praes:documentacion' %}">Documentacion</a>        </li>
+               </ul>
+                
+             {% else %}
+              <a href="{% url 'admin:index' %}">Ingresar al sitio Administrador</a>
+    
+              {% endif %}
+
+
+          </div>
+            <h4 class="heading7">Productos</h4>
+            <ul class="footer-ul">
+              <li>Nariz Electrónica</li>
+              <li>Desarrollo diplomado IOT</li>
+              <li>Sistemas GRIPV</li>
+              <li>Proyectos Ambientales Escolares (PRAES)</li>
+              <li>Protocolo PAWS con SDR</li>
+
+            </ul>
+          </div>
+
+        </div>
+      </div>
+</footer>
 </body>
 </html>

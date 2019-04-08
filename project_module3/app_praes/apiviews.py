@@ -1,33 +1,56 @@
 from rest_framework import generics 
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import permissions
 
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
 from .models import Temperatura, Humedad, PresionAtmosferica, MaterialParticulado, NO2, \
-      Polvo, O3, SO2, CO, CO2, MetanoPropanoCO, LuzUV, MaterialOrganico, CH4, Anemometro
+      Polvo, O3, SO2, CO, CO2, MetanoPropanoCO, LuzUV, MaterialOrganico, CH4, Anemometro, Sensores
 from .serializers import TemperaturaSerializer, HumedadSerializer, PresionAtmosfericaSerializer, \
       MaterialParticuladoSerializer, NO2Serializer, PolvoSerializer, O3Serializer, SO2Serializer, \
       COSerializer, CO2Serializer, MetanoPropanoCOSerializer, LuzUVSerializer,\
-      MaterialOrganicoSerializer, CH4Serializer, AnemometroSerializer, UserSerializer
+      MaterialOrganicoSerializer, CH4Serializer, AnemometroSerializer, UserSerializer, SensoresSerializer
 
 
+
+# class SensoresAPI(APIView):
+#     """ Provee la lista de todos los sensores usados para el monitoreo ambiental,
+#     esto es util para programar la tarjeta de desarrollo o terminal IoT, 
+#     solo el administrador tiene acceso a esta API
+#     """
+#     permission_classes = (permissions.IsAdminUser,)
+#     def get(self, request, format=None):
+#         datos = Sensores.objects.all()
+#         sensores = datos.values("id", "nombre_sensor")
+#         return Response(sensores)
+
+# Clases para el administrador centroTIC
 class LoginView(APIView):
+    """ Esta API es para ver los usuarios registrados hasta el momento
+    en la aplicacion del CENTROTIC
+    """
+    permission_classes = (permissions.IsAdminUser,)
+    
+    def get(self, request,):
+        users = User.objects.all()
+        usuarios = users.values("username", "email")
+        return Response(usuarios)
 
-    def post(self, request,):
-        permission_classes = ()
-        username = request.data.get("username")
-        password = request.data.get("password")
-        user = authenticate(username=username, password=password)
-        if user:
-            return Response({"token": user.auth_token.key})
-        else:
-            return Response({"error": "Wrong Credentials"}, status=status.HTTP_400_BAD_REQUEST)
+class SensoresAPI(generics.CreateAPIView):
+    """ Provee la lista de todos los sensores usados para el monitoreo ambiental,
+    esto es util para programar la tarjeta de desarrollo o terminal IoT, 
+    solo el administrador tiene acceso a esta API
+    """
+    permission_classes = (permissions.IsAdminUser,)
+    queryset = Sensores.objects.all()
+    serializer_class = SensoresSerializer
 
 class CrearUsuarioAPI(generics.CreateAPIView):
-    # authentication_classes = ()
-    # permission_classes = ()
+    permission_classes = (permissions.IsAdminUser,)
     serializer_class = UserSerializer
+###
 
 ## Variables ambientales 
 class TemperaturaAPI(generics.CreateAPIView):
