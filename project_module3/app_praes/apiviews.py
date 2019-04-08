@@ -38,7 +38,7 @@ class LoginView(APIView):
         usuarios = users.values("username", "email")
         return Response(usuarios)
 
-class SensoresAPI(generics.CreateAPIView):
+class SensoresAPI(generics.ListCreateAPIView):
     """ Provee la lista de todos los sensores usados para el monitoreo ambiental,
     esto es util para programar la tarjeta de desarrollo o terminal IoT, 
     solo el administrador tiene acceso a esta API
@@ -57,58 +57,58 @@ class TemperaturaAPI(generics.CreateAPIView):
     queryset = Temperatura.objects.all()
     serializer_class = TemperaturaSerializer
 
-class HumedadAPI(generics.ListCreateAPIView):
+class HumedadAPI(generics.CreateAPIView):
     queryset = Humedad.objects.all()
     serializer_class = HumedadSerializer
 
-class PresionAtmosfericaAPI(generics.ListCreateAPIView):
+class PresionAtmosfericaAPI(generics.CreateAPIView):
     queryset = PresionAtmosferica.objects.all()
     serializer_class = PresionAtmosfericaSerializer
 
-class MaterialParticuladoAPI(generics.ListCreateAPIView):
+class MaterialParticuladoAPI(generics.CreateAPIView):
     queryset = MaterialParticulado.objects.all()
     serializer_class = MaterialParticuladoSerializer
 
-class NO2API(generics.ListCreateAPIView):
+class NO2API(generics.CreateAPIView):
     queryset = NO2.objects.all()
     serializer_class = NO2Serializer
 
-class PolvoAPI(generics.ListCreateAPIView):
+class PolvoAPI(generics.CreateAPIView):
     queryset = Polvo.objects.all()
     serializer_class = PolvoSerializer
 
-class O3API(generics.ListCreateAPIView):
+class O3API(generics.CreateAPIView):
     queryset = O3.objects.all()
     serializer_class = O3Serializer
 
-class SO2API(generics.ListCreateAPIView):
+class SO2API(generics.CreateAPIView):
     queryset = SO2.objects.all()
     serializer_class = SO2Serializer
 
-class COAPI(generics.ListCreateAPIView):
+class COAPI(generics.CreateAPIView):
     queryset = CO.objects.all()
     serializer_class = COSerializer
 
-class CO2API(generics.ListCreateAPIView):
+class CO2API(generics.CreateAPIView):
     queryset = CO2.objects.all()
     serializer_class = CO2Serializer
 
-class MetanoPropanoCOAPI(generics.ListCreateAPIView):
+class MetanoPropanoCOAPI(generics.CreateAPIView):
     queryset = MetanoPropanoCO.objects.all()
     serializer_class = MetanoPropanoCOSerializer
 
-class LuzUVAPI(generics.ListCreateAPIView):
+class LuzUVAPI(generics.CreateAPIView):
     queryset = LuzUV.objects.all()
     serializer_class = LuzUVSerializer
 
-class MaterialOrganicoAPI(generics.ListCreateAPIView):
+class MaterialOrganicoAPI(generics.CreateAPIView):
     queryset = MaterialOrganico.objects.all()
     serializer_class = MaterialOrganicoSerializer
 
-class CH4API(generics.ListCreateAPIView):
+class CH4API(generics.CreateAPIView):
     queryset = CH4.objects.all()
     serializer_class = CH4Serializer
 
-class AnemometroAPI(generics.ListCreateAPIView):
+class AnemometroAPI(generics.CreateAPIView):
     queryset = Anemometro.objects.all()
     serializer_class = AnemometroSerializer
