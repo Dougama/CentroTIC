@@ -1,12 +1,15 @@
 import json
 
 class Init():
+    """ Hace referencia al metodo inicial en el que se intercambian
+    los mensajes con la base de datos 
+    """
     def __init__(self):
         pass
     
     def init_request(self):
         """
-        Este método se ejecuta en el Master
+        Este método se ejecuta en el Master (servidor web)
         """
         INIT_REQUEST = {
         "jsonrpc": "2.0",
@@ -27,7 +30,8 @@ class Init():
     
     def init_response(self):
         """
-        Este método se ejecuta en la base de datos (servidor web)
+        Este método se ejecuta en la base de datos (servidor base de datos), de acuerdo 
+        a las solicitudes del maestro
         """
         INIT_RESPONSE = {
             "jsonrpc": "2.0",
@@ -47,12 +51,17 @@ class Init():
         }
 
 class GetSpectrum():
+    """
+    Esta clase es para el intercambio de mensajes del espectro georeferenciado
+    para saber en las posiciones geograficas el espectro que esta ocupado
+    """
     def __init__(self,):
         pass
     
     def avail_spectrum_request(self):
         """ 
-        Este metodo se ejecuta en el USRP-Slave
+        Este metodo se ejecuta en el esclavo-SDR para preguntarle al maestro
+        que espectro hay disponible para realizar una transmisión.
         """
         AVAIL_SPECTRUM_REQ =  {
         "jsonrpc": "2.0",
@@ -76,7 +85,8 @@ class GetSpectrum():
         }
 
     def avail_spectrum_response(self):
-        """Este metodo se ejecuta en la base de datos (servidor web)
+        """Este metodo se ejecuta en la base de datos (servidor base de datos) de acuerdo 
+        a la solicitud hecha por el Maestro (servidor web)
         """
         AVAIL_SPECTRUM_RESPONSE = {
         "jsonrpc": "2.0",

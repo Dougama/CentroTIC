@@ -1,0 +1,35 @@
+{% extends "paws/base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+<div class="container">
+    <h1>Registro de dispositivos esclavos</h1>
+    <div class="row">
+        <div class="col-sm">
+        <img src="{% static 'Secuencia_comunicacion.png' %}" alt="imagen no encontrada">
+        </div>
+
+        <div class="col-sm">
+          <form>
+  <div class="form-group">
+    <label for="numero-serial">Número Serial</label>
+    <input type="text" class="form-control" id="numero-serial" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

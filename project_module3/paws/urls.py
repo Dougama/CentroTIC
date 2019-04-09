@@ -4,4 +4,5 @@ from . import views
 app_name = "paws"
 urlpatterns = [
     path("index", views.index, name="index-paws"),
+    path("register", views.register, name="register"),
 ]
