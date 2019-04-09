@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import paho.mqtt.publish as publish
+from .models import Temperatura
 
 # Create your views here.
 def index(request):
@@ -11,7 +12,9 @@ def medicion_actual(request):
     return render(request, "app_praes/medicion_actual.html", respuesta)
 
 def monitoreo_lecturas(request):
-    respuesta = {}
+    temp = Temperatura.objects.all()
+    temperatura = temp.values("fecha", "valor")
+    respuesta = {"temperatura": temperatura}
     return render(request, "app_praes/monitoreo_lecturas.html", respuesta)
 
 def control_ESP32(request):
