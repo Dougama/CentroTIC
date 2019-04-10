@@ -3,7 +3,9 @@ import requests.auth
 import datetime
 
 fecha = datetime.datetime.now()
-valor = 200
+print(fecha)
+print(type(fecha))
+valor = 50
 pyload = {
     "fecha": fecha,
     "valor": valor,
@@ -22,6 +24,6 @@ pyload = {
 
 
 r = requests.post("http://34.73.25.149/app_praes/temperatura/", data=pyload, headers={"Authorization": " Token d2865cc229825bd3b05d765f11f21b6b80c0fff6"})
-
 print(r.text)
+print(r.status_code)
 r.close()

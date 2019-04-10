@@ -76,10 +76,11 @@ def request(method, url, data=None, json=None, headers={}, stream=None):
             s.write(b"Content-Length: %d\r\n" % len(data))
         s.write(b"\r\n")
         if data:
+            print(data, "data error ")
             s.write(data)
 
         l = s.readline()
-        #print(l)
+        print(l, "readline")
         l = l.split(None, 2)
         status = int(l[1])
         reason = ""

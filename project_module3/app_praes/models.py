@@ -48,6 +48,7 @@ class Temperatura(models.Model):
     valor = models.FloatField()
     sensor = models.ForeignKey(Sensores, on_delete=models.CASCADE)
 
+
 class Humedad(models.Model):
     fecha = models.DateTimeField(auto_now=False, auto_now_add=False)
     valor = models.FloatField()
