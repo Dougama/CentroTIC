@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app_sensado',
     'app_praes',
     'paws',
+    'E3Tratos',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
@@ -89,6 +90,7 @@ WSGI_APPLICATION = 'project_module3.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+
 
 DATABASES = {
     'default': {

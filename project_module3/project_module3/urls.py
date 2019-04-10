@@ -24,6 +24,7 @@ urlpatterns = [
     path('app_praes/', include('app_praes.urls', namespace="app_praes")),
     path('paws/', include('paws.urls', namespace="paws")),
     path('nariz_electronica/', include('nariz_electronica.urls', namespace="nariz_electronica")),
+    path('E3Tratos/', include('E3Tratos.urls', namespace="E3Tratos")),
     path('', views.main_index, name='main-index'),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
