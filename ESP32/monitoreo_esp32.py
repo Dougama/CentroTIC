@@ -8,6 +8,11 @@ from  umqtt.simple import MQTTClient
 import ubinascii
 import micropython
 
+"""
+Este archivo contiene las funciones MQTT y enviar a traves de la API
+La URL especificada
+"""
+
 def enviar_API(url, fecha, valor, sensor):
     """ Esta funcion se encarga de enviar los datos
     a la API para que sean almacenados en la base de datos
